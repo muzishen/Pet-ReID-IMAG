@@ -1,0 +1,35 @@
+_BASE_: baselinev1_s101.yaml
+
+MODEL:
+  BACKBONE:
+    PRETRAIN: False
+  WEIGHTS: logs/s101_288/model_final.pth
+
+DATASETS:
+  TESTS: ("PetIDTest",)
+
+INPUT:
+  SIZE_TEST: [288, 288]
+  CROP:
+    ENABLED: False
+
+TEST:
+  AQE :
+    ENABLED: False
+    ALPHA : 3.0
+    QE_TIME : 1
+    QE_K : 2
+
+  RERANK:
+    ENABLED: False
+    K1: 10
+    K2: 4
+    LAMBDA: 0.8
+
+  FLIP:
+    ENABLED: False
+    
+  SAVE_DIST:
+    ENABLED: True
+
+OUTPUT_DIR: logs/s101_288

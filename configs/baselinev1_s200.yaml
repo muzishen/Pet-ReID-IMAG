@@ -1,0 +1,25 @@
+_BASE_: baselinev1_s101.yaml
+
+MODEL:
+  BACKBONE:
+    NAME: build_resnest_backbone
+    DEPTH: 200x
+    FEAT_DIM: 2048
+    PRETRAIN: True
+    PRETRAIN_PATH: 'pretrain/resnest200-75117900.pth'
+    NORM: BN  
+  HEADS:
+    NORM: BN
+
+INPUT:
+  SIZE_TRAIN: [224, 224]
+  SIZE_TEST: [224, 224]
+
+
+SOLVER:
+  AMP:
+    ENABLED: True
+  MAX_EPOCH: 35
+  IMS_PER_BATCH: 64
+    
+OUTPUT_DIR: logs/s200_224

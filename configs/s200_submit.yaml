@@ -1,0 +1,30 @@
+_BASE_: baselinev1_s200.yaml
+
+MODEL:
+  BACKBONE:
+    PRETRAIN: False
+  WEIGHTS: logs/s200_final/224_86.27/model_final.pth
+
+DATASETS:
+  TESTS: ("PetIDTest",)
+
+INPUT:
+  SIZE_TEST: [224, 224]
+
+  CROP:
+    ENABLED: False
+    SIZE: [224, 224] 
+TEST:
+  RERANK:
+    ENABLED: False
+    K1: 10
+    K2: 4
+    LAMBDA: 0.8
+
+  FLIP:
+    ENABLED: False
+    
+  SAVE_DIST:
+    ENABLED: True
+
+OUTPUT_DIR: logs/s200_final/224_86.27

@@ -1,0 +1,24 @@
+_BASE_: baselinev1_s101.yaml
+
+MODEL:
+  BACKBONE:
+    PRETRAIN: False
+  WEIGHTS: logs/s101_224/model_final.pth
+
+DATASETS:
+  TESTS: ("PetIDTest",)
+
+TEST:
+  RERANK:
+    ENABLED: False
+    K1: 20
+    K2: 3
+    LAMBDA: 0.8
+
+  FLIP:
+    ENABLED: False
+    
+  SAVE_DIST:
+    ENABLED: True
+
+OUTPUT_DIR: logs/fusion_submit/

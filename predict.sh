@@ -1,0 +1,1 @@
+python3 pet_id/train_net.py --config-file ./configs/fusion_submit.yaml --eval-only  --commit 

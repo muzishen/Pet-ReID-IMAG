@@ -1,0 +1,51 @@
+_BASE_: Base-SBS.yml
+
+MODEL:
+  BACKBONE:
+    NAME: build_resnet_backbone
+    WITH_IBN: True
+    DEPTH: 50x
+    FEAT_DIM: 2048
+    PRETRAIN: True
+    PRETRAIN_PATH: pretrain/resnet50_ibn_a-d9d0bb7b.pth
+
+
+INPUT:
+  SIZE_TRAIN: [ 256, 256 ]
+  SIZE_TEST: [ 256, 256 ]
+
+
+SOLVER:
+  MAX_EPOCH: 40
+  DELAY_EPOCHS: 5
+  BASE_LR: 0.00035
+  CHECKPOINT_PERIOD: 5
+  IMS_PER_BATCH: 64
+
+  WARMUP_FACTOR: 0.1
+  WARMUP_ITERS: 400
+
+  FREEZE_ITERS: 1000
+
+DATALOADER:
+  SAMPLER_TRAIN: NaiveIdentitySampler
+  NUM_INSTANCE: 2
+  NUM_WORKERS: 8
+
+TEST:
+  EVAL_PERIOD: 5
+
+  RERANK:
+    ENABLED: False
+    K1: 20
+    K2: 3
+    LAMBDA: 0.8
+
+  FLIP:
+    ENABLED: False
+
+DATASETS:
+  NAMES: ("PetID",)
+  TESTS: ("PetID",)
+
+OUTPUT_DIR: logs/baseline

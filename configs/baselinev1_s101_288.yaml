@@ -1,0 +1,12 @@
+_BASE_: baselinev1_s101.yaml
+
+
+INPUT:
+  SIZE_TRAIN: [288, 288]
+  SIZE_TEST: [288, 288]
+
+  CROP:
+    ENABLED: True
+    SIZE: [288, 288] 
+
+OUTPUT_DIR: logs/s101_288
