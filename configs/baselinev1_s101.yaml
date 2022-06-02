@@ -1,0 +1,131 @@
+_BASE_: Base-SBS.yml
+
+MODEL:
+  BACKBONE:
+    NAME: build_resnest_backbone
+    WITH_IBN: True    
+    WITH_NL:  True    
+    WITH_SE: False
+    DEPTH: 101x
+    FEAT_DIM: 2048
+    PRETRAIN: True
+    PRETRAIN_PATH:  'pretrain/resnest101-22405ba7.pth'
+    NORM: BN   
+  
+  HEADS:
+    NECK_FEAT: after
+    POOL_LAYER: GeneralizedMeanPoolingP
+    CLS_LAYER: CosSoftmax     
+    SCALE: 64
+    MARGIN: 0.35         
+    NORM: BN   
+
+
+  LOSSES:
+    NAME: ( "TripletLoss", "CircleLoss", "CrossEntropyLoss", )    
+    CE:
+      EPSILON: 0.1
+      SCALE: 1.0
+
+    CIRCLE:
+      MARGIN: 0.35
+      GAMMA: 64
+      SCALE: 1.0
+
+
+    TRI:
+      MARGIN: 0.0
+      HARD_MINING: True    
+      NORM_FEAT: False
+      SCALE: 1.0
+INPUT:
+  SIZE_TRAIN: [224, 224]
+  SIZE_TEST: [224, 224]
+
+  CROP:
+    ENABLED: True
+    SIZE: [224, 224]    
+    RATIO: [0.16, 1]
+    SCALE:  [0.75, 1.33333]
+
+  REA:
+    ENABLED: False
+    PROB: 0.5
+    VALUE: [0, 0, 0]
+  RPT:
+    ENABLED: False
+    PROB: 0.5
+
+  BLUR:
+    ENABLED: True
+    KERNEL_SIZE : (5, 9)
+
+  FLIP:
+    ENABLED: True
+    PROB: 0.5
+
+  VFLIP:
+    ENABLED: False
+    PROB: 0.5
+
+  PADDING:
+    ENABLED: True
+    SIZE: 10
+
+  AUTOAUG:
+    ENABLED: True
+    PROB: 0.5
+
+  AUGMIX:
+    ENABLED: True
+    PROB: 0.5
+
+  AFFINE:
+    ENABLED: True
+
+  CJ:
+    ENABLED: True
+    BRIGHTNESS: 0.15
+    CONTRAST: 0.15
+    SATURATION: 0.1
+    HUE: 0.1
+    PROB: 0.5
+
+SOLVER:
+  OPT: Adam
+  MAX_EPOCH: 35
+  DELAY_EPOCHS: 5
+  BASE_LR: 0.00035   
+  HEADS_LR_FACTOR: 1.0
+  CHECKPOINT_PERIOD: 5
+  IMS_PER_BATCH: 80
+
+  WARMUP_FACTOR: 0.1
+  WARMUP_ITERS: 400
+
+  FREEZE_ITERS: 1000
+
+DATALOADER:
+  SAMPLER_TRAIN: NaiveIdentitySampler  
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+
+TEST:
+  EVAL_PERIOD: 100000
+
+  METRIC: 'cosine'
+
+  RERANK:
+    ENABLED: False
+    K1: 20
+    K2: 3
+    LAMBDA: 0.8
+
+  FLIP:
+    ENABLED: False
+
+DATASETS:
+  NAMES: ("PetID",)
+  TESTS: ("PetID",)
+
+OUTPUT_DIR: logs/s101_224
