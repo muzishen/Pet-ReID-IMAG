@@ -2,6 +2,8 @@
  The 3rd place solution to CVPR2022 Biometrics Workshop Pet Biometric Challenge
 ---- 
 ## Introduction
+
+- Traing time cost ~1.5 hour with a V100 16GB, so easy, no bells and whistles!
 - Techical details are described in our [arXiv preprint paper](https://arxiv.org/pdf/2205.15934.pdf). 
 
 The data obtained by offline addition can be obtained from [here](https://pan.baidu.com/s/1yYNJFuyrJy8kn5TVA5_Okw) [d0kc].
