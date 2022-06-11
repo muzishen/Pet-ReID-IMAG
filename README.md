@@ -31,4 +31,4 @@ bash predict.sh
 ```
 
 ## Acknowledgement
-A large portion of code is borrowed from [fast-reid](https://github.com/JDAI-CV/fast-reid), many thanks to their wonderful work!
+A large portion of code is borrowed from [fast-reid](https://github.com/JDAI-CV/fast-reid), many thanks  :+1: to their wonderful work! 
