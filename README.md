@@ -2,11 +2,11 @@
  The 3rd place solution to CVPR2022 Biometrics Workshop Pet Biometric Challenge
 ---- 
 ## Introduction
-- We just trained one model (ResNeSt) with different scales (i.e., 224, 256, and 288).
-- Traing time cost ~1.5 hour with a V100 16GB, so easy, no bells and whistles!
-- Techical details are described in our [arXiv preprint paper](https://arxiv.org/pdf/2205.15934.pdf). 
-
-The data obtained by offline addition can be obtained from [here](https://pan.baidu.com/s/1yYNJFuyrJy8kn5TVA5_Okw) [d0kc].
+- :blush: We just trained one model (ResNeSt) with different scales (i.e., 224, 256, and 288).
+- :rocket: Traing time cost ~1.5 hour with a V100 16GB, so easy, no bells and whistles! 
+- :eyes: Techical details are described in our [arXiv preprint paper](https://arxiv.org/pdf/2205.15934.pdf). 
+- :point_right: The data obtained by offline addition can be obtained from [here](https://pan.baidu.com/s/1yYNJFuyrJy8kn5TVA5_Okw) [d0kc].
+- Click on the star  :star:, Thank you :heart:
 ## Requirements
 
 * PyTorch  1.7.0+cu101
