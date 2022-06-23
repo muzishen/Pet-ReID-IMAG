@@ -6,6 +6,7 @@
 - :rocket: Traing time cost ~1.5 hour with a V100 16GB, so easy, no bells and whistles! 
 - :eyes: Techical details are described in our [arXiv preprint paper](https://arxiv.org/pdf/2205.15934.pdf). 
 - :point_right: The data obtained by offline addition can be obtained from [here](https://pan.baidu.com/s/1yYNJFuyrJy8kn5TVA5_Okw) [d0kc].
+- :point_right: The weights can be obtained from [here](https://pan.baidu.com/s/1Og0TqfeelnxcQcQ6Kd2lgg) [ba2y].
 - Click on the star  :star:, Thank you :heart:
 ## Requirements
 
