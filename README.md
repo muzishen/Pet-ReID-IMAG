@@ -13,7 +13,7 @@
 * PyTorch  1.7.0+cu101
 * torchvision  0.8.1+cu101 
 
-### Prepare Data
+### Prepare data
 
 ```
 cd ./Pet-ReID-IMAG
