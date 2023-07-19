@@ -4,7 +4,7 @@
 ## Introduction
 - :blush: We only trained one model (ResNeSt) with different scales (i.e., 224, 256, and 288), respectivel achieved 91.7% and 86.27% in phase A and B.
 - :rocket: Traing time cost ~1.5 hour with a V100 16GB, so easy, no bells and whistles! 
-- :eyes: Techical details are described in our [arXiv preprint paper](https://arxiv.org/pdf/2205.15934.pdf). 
+- :eyes: Techical details are described in our [PDF](https://arxiv.org/pdf/2205.15934.pdf). 
 - :point_right: The train/test data can be obtained from [百度云](https://pan.baidu.com/s/17tnCE8b-oSh8xGMHczPzqQ?pwd=imag), [Google drive](https://drive.google.com/drive/folders/1_7pdSRTvD_XdTu8z0MxrM9PDoEuX-tjf?usp=drive_link).
 - :point_right: The weights can be obtained from [百度云](https://pan.baidu.com/s/17tnCE8b-oSh8xGMHczPzqQ?pwd=imag), [Google drive](https://drive.google.com/drive/folders/1_7pdSRTvD_XdTu8z0MxrM9PDoEuX-tjf?usp=drive_link).
 - Click on the star  :star:, Thank you :heart:
